@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+{% block body %}
+<h1>Hello To Object Detection</h1>
+<p>This Model Train By Faster RCNN</p>
+<!-- <button class="btn success">Success</button> -->
+
+<div class="tab">
+  <div class="iner_tab">
+    <button class="tablink1" onclick="openPage('News', this)" id="defaultOpen">Image</button>
+    <button class="tablink1" onclick="openPage('Contact', this)">Video</button>
+  </div>
+
+  <div id="News" class="tabcontent1">
+    <form method="POST">
+      <h3>Image Detection</h3>
+      <hr>
+      <label for="Ipath">Enter the path</label>
+      <input type="text" id="Ipath" name="Iname" placeholder="Your image path..">
+      <button class="tablinks" onclick="openCity(event, 'London')" id="defaultOpen">Detect The Image</button>      
+    </form>
+  </div>
+    
+  <div id="Contact" class="tabcontent1">
+    <form method="POST">
+      <h3>Video Detection</h3>
+      <hr>
+      <label for="Vpath">Enter the path</label>
+      <input type="text" id="Vpath" name="Vname" placeholder="Your video path..">
+      <button class="tablinks" onclick="openCity(event, 'Paris')">Detect The Video</button>
+    </form>
+    
+  </div>
+</div>
+
+<div id="London" class="tabcontent">
+  {% if InameDetect %}
+  <h1>Rendered Image</h1>
+  <!-- <p>London is the capital city of England.</p> -->
+  <div class="circular-image">
+      <img src="{{ InameDetect }}" alt="">
+  </div>
+  {% else %}
+  <h1>Image will be render here...</h1>
+  {% endif %}
+</div>
+
+<!-- <div id="Paris" class="tabcontent">
+  <h3>Paris</h3>
+  <p>Paris is the capital of France.</p> 
+</div> -->
+
+<script>
+  function openPage(pageName,elmnt,color) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent1");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablink1");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].style.backgroundColor = "";
+    }
+    document.getElementById(pageName).style.display = "block";
+    elmnt.style.backgroundColor = color;
+  }
+
+  function openCity(evt, cityName) {
+      var i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+      document.getElementById(cityName).style.display = "block";
+      evt.currentTarget.className += " active";
+  }
+  // Get the element with id="defaultOpen" and click on it
+  document.getElementById("defaultOpen").click();
+</script>
+
+{% endblock %}

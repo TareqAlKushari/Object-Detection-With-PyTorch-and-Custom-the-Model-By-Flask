@@ -1,0 +1,122 @@
+* {box-sizing: border-box}
+body {font-family: "Lato", sans-serif;}
+
+/* Style the tab */
+.tab {
+    float: left;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+    width: 30%;
+    height: 600px;
+}
+
+/* Style the tab */
+.tab .iner_tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+.tab .iner_tab button {
+  width: 50%;
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+/* Style tab links */
+/* .tab .tablink1 {
+    width: 30%;
+    background-color: inherit;
+    color: black;
+    padding: 22px 16px;
+    border: none;
+    outline: none;
+    text-align: left;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 17px;
+} */
+
+/* Change background color of buttons on hover */
+.tab .iner_tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab .iner_tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tab .tabcontent1 {
+  display: none;
+  padding: 6px 12px;
+  /* border: 1px solid #ccc; */
+  /* border-top: none; */
+  /* height: 100%; */
+}
+
+/* Overwrite default styles of hr */
+.tab .tabcontent1 hr {
+  border: 1px solid #c0bcbc;
+  margin-bottom: 25px;
+}
+
+/* Style the input elements and the submit button */
+input[type=text], input[type=file] {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Style the submit button */
+.tab .tabcontent1 button {
+  display: block;
+  color: black;
+  width: 100%;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 17px;
+  
+
+  padding: 12px;
+  margin: 8px 0;
+  background-color: #949393;
+}
+
+/* Change background color of buttons on hover */
+.tab .tabcontent1 button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current "tab button" class */
+.tab .tabcontent1 button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  float: left;
+  padding: 0px 12px;
+  border: 1px solid #ccc;
+  width: 70%;
+  border-left: none;
+  height: 600px;
+}
+
+.tabcontent img {
+  width: 100%;
+  /* height: 80%; */
+}
