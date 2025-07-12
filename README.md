@@ -1,5 +1,12 @@
 # 🎯 Object Detection with PyTorch & Flask
 
+![GitHub](https://img.shields.io/github/license/TareqAlKushari/Object-Detection-With-PyTorch-and-Custom-the-Model-By-Flask)
+![Repo Size](https://img.shields.io/github/repo-size/TareqAlKushari/Object-Detection-With-PyTorch-and-Custom-the-Model-By-Flask)
+![Last Commit](https://img.shields.io/github/last-commit/TareqAlKushari/Object-Detection-With-PyTorch-and-Custom-the-Model-By-Flask)
+![Issues](https://img.shields.io/github/issues/TareqAlKushari/Object-Detection-With-PyTorch-and-Custom-the-Model-By-Flask)
+![Forks](https://img.shields.io/github/forks/TareqAlKushari/Object-Detection-With-PyTorch-and-Custom-the-Model-By-Flask?style=social)
+![Stars](https://img.shields.io/github/stars/TareqAlKushari/Object-Detection-With-PyTorch-and-Custom-the-Model-By-Flask?style=social)
+
 A complete end-to-end object detection system that leverages **PyTorch's Faster R-CNN** pretrained model and serves detection via a **Flask web application** and REST API. This project supports detecting objects in images and videos using a modular and extensible pipeline.
 
 ![Output Demo](assets/video2.gif)
@@ -17,30 +24,31 @@ A complete end-to-end object detection system that leverages **PyTorch's Faster 
 ## 📁 Project Structure
 
 ```bash
-assets/           # Static assets and UI resources
-data/             # Datasets and labels (optional)
-docs/             # Documentation files
-input/            # Input images and videos for testing
-outputs/          # Detection results saved as images/videos
-python/           # Core detection modules and utilities
-├── detect\_utils.py   # Prediction and drawing helper functions
-├── model.py          # Model loading function
-└── utils.py          # COCO category labels
-static/           # Static files served by Flask
-├── css/
-│    └── main.css     # Stylesheet for the web UI
-└── uploads/          # Uploaded and processed images served by Flask
-templates/        # HTML templates for Flask web interface
-├── base.html         # Base template
-└── homepage.html     # Homepage with image/video detection UI
-translations/     # Translation files (optional)
-api\_app.py        # Flask web app for interactive detection
-detect\_api.py     # Detection logic for API integration
-detect\_image.py   # Script for running detection on a single image
-detect\_video.py   # Script for running detection on video files
-LICENSE           # Project license (MIT)
-README.md         # This file
-requirements.txt  # Python dependencies
+.Object-Detection-With-PyTorch-and-Custom-the-Model-By-Flask
+├── assets/                  # Static assets for UI or documentation
+├── data/                    # Dataset files (annotations, images)
+├── docs/                    # Documentation resources
+├── input/                   # Input images/videos for testing
+├── outputs/                 # Output detections and results
+├── python/                  # Core Python modules
+│   ├── detect_utils.py      # predict() + draw_boxes()
+│   ├── model.py             # Load pretrained Faster R-CNN model
+│   └── utils.py             # COCO class names
+├── static/                  # Static files served by Flask
+│   ├── css/                 # CSS styles
+│   │   └── main.css         # Stylesheet for the web UI
+│   └── uploads/             # Uploaded images directory
+├── templates/               # HTML templates for Flask web pages
+│   ├── base.html            # HTML base layout
+│   └── homepage.html        # Home page with upload and detection UI
+├── translations/            # Language translations (if applicable)
+├── api_app.py               # Flask app and routes
+├── detect_api.py            # Core detection for Flask app
+├── detect_image.py          # CLI: detect objects in image
+├── detect_video.py          # CLI: detect objects in video
+├── LICENSE                  # License file (MIT)
+├── README.md                # This README file
+└── requirements.txt         # Python dependencies
 ```
 
 ## 💡 Installation
