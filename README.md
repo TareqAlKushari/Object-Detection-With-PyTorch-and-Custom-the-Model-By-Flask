@@ -9,7 +9,10 @@ This repository demonstrates object detection using PyTorch with a Faster R-CNN 
 - **Purpose:** Detect objects in images using a powerful neural network, and provide a web interface for interacting with the model.
 
 
+[🎥 Watch Output Video](https://github.com/TareqAlKushari/Object-Detection-With-PyTorch-and-Custom-the-Model-By-Flask/blob/main/outputs/video2_t05.mp4)
+
 [🎥 Watch Output Video](outputs/video2_t05.mp4)
+
 
 [![Watch the Output Video](outputs/video_thumb.jpg)](outputs/video2_t05.mp4)
 
