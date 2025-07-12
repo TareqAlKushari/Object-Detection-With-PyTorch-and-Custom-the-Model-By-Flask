@@ -124,18 +124,39 @@ Example `curl` request (assuming you add an API endpoint):
 curl -X POST -F image=@path/to/image.jpg http://localhost:5000/predict
 ```
 
-## 🧩 How It Works
+## 🧠 How It Works
 
-* Loads the Faster R-CNN model pretrained on COCO dataset.
-* Processes images/videos to detect objects above the confidence threshold.
-* Annotates frames with bounding boxes and labels in distinct colors.
-* Offers multiple interfaces: CLI scripts, Flask web UI, and API-ready functions.
+### 🔍 Backend Inference Flow
 
-## 🎨 Web UI
+* `python/model.py`: Loads pretrained model from `torchvision.models.detection`
+* `detect_utils.py`:
 
-* Clean, tabbed interface with separate forms for image and video detection input.
-* Shows detection results with bounding box visualizations directly in the browser.
-* Styled with CSS for a modern and user-friendly experience.
+  * `predict(image, model, device, threshold)` – preprocesses image, runs inference, filters predictions
+  * `draw_boxes()` – draws bounding boxes and class labels using OpenCV
+* `utils.py`: Defines the 91 COCO classes used for label mapping
+
+### 🎨 Web UI Logic
+
+* HTML/CSS in `templates/` and `static/css/`
+* Input form allows user to submit image path
+* `api_app.py`:
+
+  * Renders `homepage.html`
+  * Calls `detect_api.py` to run detection on the input
+  * Saves and displays output via HTML `<img>`
+
+## 🧾 COCO Classes (Examples)
+
+* person, bicycle, car, motorcycle, airplane, bus
+* dog, cat, horse, sheep, cow
+* bottle, chair, laptop, keyboard, clock
+* ... and more (total: 91 categories)
+
+## 📷 Sample Output
+
+|                 **Input**                 |               **Detected Output**               |
+| :---------------------------------------: | :---------------------------------------------: |
+| <img src="input/image_1.jpg" width="300"/> | <img src="outputs/image_1_t05_v2.jpg" width="300"/> |
 
 ## ⚙️ Dependencies
 
