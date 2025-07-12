@@ -9,7 +9,11 @@
 
 A complete end-to-end object detection system that leverages **PyTorch's Faster R-CNN** pretrained model and serves detection via a **Flask web application** and REST API. This project supports detecting objects in images and videos using a modular and extensible pipeline.
 
+## 📸 Demo
+
 ![Output Demo](assets/video2.gif)
+
+![Screenshot of the model.](/outputs/street_t05.jpg)
 
 ## 🚀 Features
 
@@ -24,7 +28,7 @@ A complete end-to-end object detection system that leverages **PyTorch's Faster 
 ## 📁 Project Structure
 
 ```bash
-.Object-Detection-With-PyTorch-and-Custom-the-Model-By-Flask
+Object-Detection-With-PyTorch-and-Custom-the-Model-By-Flask
 ├── assets/                  # Static assets for UI or documentation
 ├── data/                    # Dataset files (annotations, images)
 ├── docs/                    # Documentation resources
@@ -158,19 +162,3 @@ This project is licensed under the [MIT License](LICENSE).
 
 If you encounter any issues or have suggestions, please open an issue or submit a pull request.
 Happy detecting! 🚀
-
-
-
-
-
-
-
-
-
-
-
-![Screenshot of the website.](/Object Detection.png)
-
-![Screenshot of the model.](/outputs/street_t05.jpg)
-
-![](/outputs/video2_t05.mp4)
