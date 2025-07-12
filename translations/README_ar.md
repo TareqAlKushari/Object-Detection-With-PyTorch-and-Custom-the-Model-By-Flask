@@ -14,7 +14,7 @@ A complete end-to-end object detection system that leverages **PyTorch's Faster 
 
 ## 📁 Project Structure
 
-```
+```bash
 assets/           # Static assets and UI resources
 data/             # Datasets and labels (optional)
 docs/             # Documentation files
