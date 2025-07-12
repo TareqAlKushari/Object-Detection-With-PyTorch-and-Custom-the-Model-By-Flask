@@ -1,97 +1,158 @@
-# Object Detection With PyTorch and Custom Model By Flask
+# 🎯 Object Detection with PyTorch & Flask
 
-This repository demonstrates object detection using PyTorch with a Faster R-CNN model (ResNet-50-FPN-V2 backbone), integrated into a Flask web application for easy model customization and deployment.
-
-## Overview
-
-- **Model:** Faster R-CNN with ResNet-50-FPN-V2 backbone
-- **Frameworks:** PyTorch for deep learning, Flask for web serving
-- **Purpose:** Detect objects in images using a powerful neural network, and provide a web interface for interacting with the model.
+A complete end-to-end object detection system that leverages **PyTorch's Faster R-CNN** pretrained model and serves detection via a **Flask web application** and REST API. This project supports detecting objects in images and videos using a modular and extensible pipeline.
 
 ![Output Demo](assets/video2.gif)
 
-[🎥 Watch Output Video](assets/video2.gif)
+## 🚀 Features
 
+- 🔍 Object detection using Faster R-CNN ResNet50 FPN V2 with COCO weights
+- 🖼️ Detect objects in images with bounding box visualization
+- 🎥 Detect objects frame-by-frame in videos with FPS display
+- 🌐 Web interface for easy image input and result visualization
+- ⚙️ REST API backend for programmatic detection requests
+- 💻 Modular Python scripts for model loading, inference, and visualization
+- 🗂️ Organized project structure for ease of use and extension
 
-[![Watch the Output Video](outputs/video_thumb.jpg)](outputs/video2_t05.mp4)
-
-
-## Features
-
-- End-to-end object detection using a pre-trained or custom-trained model
-- Upload images via a web interface and receive detection results instantly
-- Easily swap out or fine-tune the detection model for custom datasets
-- REST API endpoints for integration with other applications
-
-## Technology Stack
-
-- **PyTorch:** Deep learning framework for model training and inference
-- **Flask:** Lightweight web framework for serving the model and providing a user interface
-- **Jupyter Notebook:** For experimentation and documentation
-- **Python 3**
-
-## Getting Started
-
-### Prerequisites
-
-- Python 3.7+
-- pip (Python package manager)
-- (Recommended) Virtual environment tool
-
-### Installation
-
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/TareqAlKushari/Object-Detection-With-PyTorch-and-Custom-the-Model-By-Flask.git
-   cd Object-Detection-With-PyTorch-and-Custom-the-Model-By-Flask
-   ```
-
-2. **Install dependencies:**
-   ```bash
-   pip install -r requirements.txt
-   ```
-   *(If `requirements.txt` is not present, install Flask, torch, torchvision, and other required libraries manually.)*
-
-3. **Download or prepare your trained model weights.**
-   - Place them in the appropriate directory as specified in the project files or documentation.
-
-### Running the Application
+## 📁 Project Structure
 
 ```bash
-python app.py
+assets/           # Static assets and UI resources
+data/             # Datasets and labels (optional)
+docs/             # Documentation files
+input/            # Input images and videos for testing
+outputs/          # Detection results saved as images/videos
+python/           # Core detection modules and utilities
+├── detect\_utils.py   # Prediction and drawing helper functions
+├── model.py          # Model loading function
+└── utils.py          # COCO category labels
+static/           # Static files served by Flask
+├── css/
+│    └── main.css     # Stylesheet for the web UI
+└── uploads/          # Uploaded and processed images served by Flask
+templates/        # HTML templates for Flask web interface
+├── base.html         # Base template
+└── homepage.html     # Homepage with image/video detection UI
+translations/     # Translation files (optional)
+api\_app.py        # Flask web app for interactive detection
+detect\_api.py     # Detection logic for API integration
+detect\_image.py   # Script for running detection on a single image
+detect\_video.py   # Script for running detection on video files
+LICENSE           # Project license (MIT)
+README.md         # This file
+requirements.txt  # Python dependencies
 ```
-Or, if using Flask CLI:
+
+## 💡 Installation
+
+1. Clone the repository:
+
 ```bash
-flask run
+git clone https://github.com/TareqAlKushari/Object-Detection-With-PyTorch-and-Custom-the-Model-By-Flask.git
+cd Object-Detection-With-PyTorch-and-Custom-the-Model-By-Flask
 ```
-- Access the web interface at `http://localhost:5000`
 
-### Usage
+2. (Optional) Create and activate a virtual environment:
 
-- Upload an image through the web interface to see detected objects overlaid.
-- Use the REST API to POST images and receive detection results in JSON format.
+```bash
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+```
 
-## Customization
+3. Install required packages:
 
-- Replace the model checkpoint file to use a different or fine-tuned Faster R-CNN model.
-- Modify the Flask routes to add new functionality or endpoints.
-- Extend the app to support other PyTorch models.
+```bash
+pip install -r requirements.txt
+```
 
-## Contributing
+## 🎯 Usage
 
-Contributions are welcome! Please submit issues or pull requests for improvements, bug fixes, or new features.
+### Image Detection
 
-## License
+Detect objects on a single image and save the output with bounding boxes.
 
-[No license specified.]
+```bash
+python detect_image.py path/to/image.jpg --threshold 0.5
+```
 
-## Contact
+The output image will be saved in `outputs/` directory.
 
-For more details, visit the [repository](https://github.com/TareqAlKushari/Object-Detection-With-PyTorch-and-Custom-the-Model-By-Flask) or contact [@TareqAlKushari](https://github.com/TareqAlKushari).
+### Video Detection
+
+Detect objects on a video file (or webcam stream) frame-by-frame with FPS display.
+
+```bash
+python detect_video.py path/to/video.mp4 --threshold 0.5
+```
+
+Processed video will be saved in `outputs/` directory.
+
+Press `q` to quit the video window early.
+
+### Flask Web Application
+
+Start the interactive web app to upload images and visualize detection results in the browser.
+
+```bash
+python api_app.py
+```
+
+Open [http://localhost:9000](http://localhost:9000) in your browser.
+
+* Input the path to an image accessible to the server for detection.
+* View the annotated image rendered in the web page.
+
+### REST API Integration
+
+Use `detect_api.py` functions to integrate detection into other applications or create REST endpoints.
+
+Example `curl` request (assuming you add an API endpoint):
+
+```bash
+curl -X POST -F image=@path/to/image.jpg http://localhost:5000/predict
+```
+
+## 🧩 How It Works
+
+* Loads the Faster R-CNN model pretrained on COCO dataset.
+* Processes images/videos to detect objects above the confidence threshold.
+* Annotates frames with bounding boxes and labels in distinct colors.
+* Offers multiple interfaces: CLI scripts, Flask web UI, and API-ready functions.
+
+## 🎨 Web UI
+
+* Clean, tabbed interface with separate forms for image and video detection input.
+* Shows detection results with bounding box visualizations directly in the browser.
+* Styled with CSS for a modern and user-friendly experience.
+
+## ⚙️ Dependencies
+
+* Python 3.7+
+* PyTorch
+* torchvision
+* OpenCV
+* Flask
+* Pillow
+* numpy
+
+(See `requirements.txt` for full list.)
+
+## 📄 License
+
+This project is licensed under the [MIT License](LICENSE).
+
+## 👤 Author
+
+**Tareq Al Kushari**
+🔗 [GitHub Profile](https://github.com/TareqAlKushari)
 
 ---
 
-*Object detection made easy with PyTorch and Flask.*
+If you encounter any issues or have suggestions, please open an issue or submit a pull request.
+Happy detecting! 🚀
+
+
+
 
 
 
