@@ -1,0 +1,5 @@
+pytorch==2.4.1
+torchvision==0.19.1
+opencv-python
+Pillow
+flask
