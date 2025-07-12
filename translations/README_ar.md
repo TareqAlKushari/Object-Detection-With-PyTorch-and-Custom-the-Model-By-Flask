@@ -2,8 +2,6 @@
 
 A complete end-to-end object detection system that leverages **PyTorch's Faster R-CNN** pretrained model and serves detection via a **Flask web application** and REST API. This project supports detecting objects in images and videos using a modular and extensible pipeline.
 
----
-
 ## 🚀 Features
 
 - 🔍 Object detection using Faster R-CNN ResNet50 FPN V2 with COCO weights
@@ -14,12 +12,9 @@ A complete end-to-end object detection system that leverages **PyTorch's Faster 
 - 💻 Modular Python scripts for model loading, inference, and visualization
 - 🗂️ Organized project structure for ease of use and extension
 
----
-
 ## 📁 Project Structure
 
 ```
-
 assets/           # Static assets and UI resources
 data/             # Datasets and labels (optional)
 docs/             # Documentation files
@@ -44,8 +39,7 @@ detect\_video.py   # Script for running detection on video files
 LICENSE           # Project license (MIT)
 README.md         # This file
 requirements.txt  # Python dependencies
-
-````
+```
 
 ---
 
