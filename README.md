@@ -11,6 +11,9 @@ This repository demonstrates object detection using PyTorch with a Faster R-CNN 
 
 [🎥 Watch Output Video](outputs/video2_t05.mp4)
 
+[![Watch the Output Video](outputs/video_thumb.jpg)](outputs/video2_t05.mp4)
+
+
 ## Features
 
 - End-to-end object detection using a pre-trained or custom-trained model
