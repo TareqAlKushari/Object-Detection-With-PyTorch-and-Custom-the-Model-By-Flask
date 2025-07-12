@@ -41,8 +41,6 @@ README.md         # This file
 requirements.txt  # Python dependencies
 ```
 
----
-
 ## 💡 Installation
 
 1. Clone the repository:
@@ -50,7 +48,7 @@ requirements.txt  # Python dependencies
 ```bash
 git clone https://github.com/TareqAlKushari/Object-Detection-With-PyTorch-and-Custom-the-Model-By-Flask.git
 cd Object-Detection-With-PyTorch-and-Custom-the-Model-By-Flask
-````
+```
 
 2. (Optional) Create and activate a virtual environment:
 
@@ -65,8 +63,6 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
----
-
 ## 🎯 Usage
 
 ### Image Detection
@@ -79,8 +75,6 @@ python detect_image.py path/to/image.jpg --threshold 0.5
 
 The output image will be saved in `outputs/` directory.
 
----
-
 ### Video Detection
 
 Detect objects on a video file (or webcam stream) frame-by-frame with FPS display.
@@ -92,8 +86,6 @@ python detect_video.py path/to/video.mp4 --threshold 0.5
 Processed video will be saved in `outputs/` directory.
 
 Press `q` to quit the video window early.
-
----
 
 ### Flask Web Application
 
@@ -108,8 +100,6 @@ Open [http://localhost:9000](http://localhost:9000) in your browser.
 * Input the path to an image accessible to the server for detection.
 * View the annotated image rendered in the web page.
 
----
-
 ### REST API Integration
 
 Use `detect_api.py` functions to integrate detection into other applications or create REST endpoints.
@@ -120,8 +110,6 @@ Example `curl` request (assuming you add an API endpoint):
 curl -X POST -F image=@path/to/image.jpg http://localhost:5000/predict
 ```
 
----
-
 ## 🧩 How It Works
 
 * Loads the Faster R-CNN model pretrained on COCO dataset.
@@ -129,15 +117,11 @@ curl -X POST -F image=@path/to/image.jpg http://localhost:5000/predict
 * Annotates frames with bounding boxes and labels in distinct colors.
 * Offers multiple interfaces: CLI scripts, Flask web UI, and API-ready functions.
 
----
-
 ## 🎨 Web UI
 
 * Clean, tabbed interface with separate forms for image and video detection input.
 * Shows detection results with bounding box visualizations directly in the browser.
 * Styled with CSS for a modern and user-friendly experience.
-
----
 
 ## ⚙️ Dependencies
 
@@ -151,22 +135,9 @@ curl -X POST -F image=@path/to/image.jpg http://localhost:5000/predict
 
 (See `requirements.txt` for full list.)
 
----
-
-## 🏷️ Keywords & Topics
-
-```
-object-detection, pytorch, flask, computer-vision, deep-learning, machine-learning, image-processing,
-model-deployment, ai-api, video-analysis, real-time-inference, custom-model, python, web-app
-```
-
----
-
 ## 📄 License
 
 This project is licensed under the [MIT License](LICENSE).
-
----
 
 ## 👤 Author
 
@@ -177,10 +148,3 @@ This project is licensed under the [MIT License](LICENSE).
 
 If you encounter any issues or have suggestions, please open an issue or submit a pull request.
 Happy detecting! 🚀
-
-```
-
----
-
-Would you like me to generate badges for PyPI, license, or GitHub stars to add at the top?
-```
