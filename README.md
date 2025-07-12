@@ -11,7 +11,7 @@ This repository demonstrates object detection using PyTorch with a Faster R-CNN 
 
 [🎥 Watch Output Video](https://github.com/TareqAlKushari/Object-Detection-With-PyTorch-and-Custom-the-Model-By-Flask/blob/main/outputs/video2_t05.mp4)
 
-[🎥 Watch Output Video](outputs/video2_t05.mp4)
+[🎥 Watch Output Video](assets/video2.gif)
 
 
 [![Watch the Output Video](outputs/video_thumb.jpg)](outputs/video2_t05.mp4)
