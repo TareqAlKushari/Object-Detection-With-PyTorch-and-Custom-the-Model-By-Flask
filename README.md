@@ -8,8 +8,7 @@ This repository demonstrates object detection using PyTorch with a Faster R-CNN 
 - **Frameworks:** PyTorch for deep learning, Flask for web serving
 - **Purpose:** Detect objects in images using a powerful neural network, and provide a web interface for interacting with the model.
 
-
-[🎥 Watch Output Video](https://github.com/TareqAlKushari/Object-Detection-With-PyTorch-and-Custom-the-Model-By-Flask/blob/main/outputs/video2_t05.mp4)
+![Output Demo](assets/video2.gif)
 
 [🎥 Watch Output Video](assets/video2.gif)
 
