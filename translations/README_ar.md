@@ -1,6 +1,3 @@
-Certainly! Here’s a polished, professional `README.md` tailored for your **Object Detection with PyTorch and Flask** repository, integrating all the info you provided:
-
-```markdown
 # 🎯 Object Detection with PyTorch & Flask
 
 A complete end-to-end object detection system that leverages **PyTorch's Faster R-CNN** pretrained model and serves detection via a **Flask web application** and REST API. This project supports detecting objects in images and videos using a modular and extensible pipeline.
